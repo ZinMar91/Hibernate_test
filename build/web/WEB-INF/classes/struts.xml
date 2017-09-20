@@ -1,0 +1,350 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+    <constant name="struts.enable.DynamicMethodInvocation" value="false" />
+    <constant name="struts.devMode" value="true" />
+    <constant name="struts.custom.i18n.resources" value="MessageResources"/>
+    
+    <!-- Configuration for the default package. -->
+    <package name="default" extends="struts-default">
+        <action name="h01_index">
+            <result>h01/index_h01.jsp</result>
+        </action>
+        <action name="h02_index">
+            <result>h02/index_h02.jsp</result>
+        </action>
+        <action name="h03_index">
+            <result>h03/index_h03.jsp</result>
+        </action>
+        <action name="h04_index">
+            <result>h04/index_h04.jsp</result>
+        </action>
+        <action name="h05_index">
+            <result>h05/index_h05.jsp</result>
+        </action>
+        <action name="h06_index">
+            <result>h06/index_h06.jsp</result>
+        </action>      
+        <action name="h07_index">
+            <result>h07/index_h07.jsp</result>
+        </action>
+        <action name="h08_index">
+            <result>h08/index_h08.jsp</result>
+        </action>
+        <action name="h09_index">
+            <result>h09/index_h09.jsp</result>
+        </action>
+        <action name="h10_index">
+            <result>h10/index_h10.jsp</result>
+        </action>
+        <action name="h11_index">
+            <result>h11/index_h11.jsp</result>
+        </action>
+    </package>
+
+    
+    <package name="h01" extends="struts-default">
+        <action name="save">
+            <result>/h01/customer.jsp</result>      	    
+        </action>
+       
+        <action name="search">
+            <result>/h01/search.jsp</result>      	    
+        </action>
+       
+        <action name="insert" class="h01.action.OneEntity2TableAction" method="execute">
+            <result name="success">h01/insert_success.jsp</result>
+            <result name="error">h01/customer.jsp</result>
+        </action>
+	     
+        <action name="find" class="h01.action.OneEntity2TableAction" method="search">
+            <result name="success">/h01/show.jsp</result>	     	
+        </action>
+        <!--  Product   -->
+        
+        <action name="aaa">
+            <result name="success">/h01/product_add_form.jsp</result>
+        </action>
+        
+        <action name="bbb" class="h01.action.ProductAction" method="viewAll">
+            <result>/h01/show_all_products.jsp</result>
+        </action>
+        
+        <action name="add" class="h01.action.ProductAction" method="execute">
+            <result name="success">/h01/product_show.jsp</result>
+            <result name="input">/h01/product_add_form.jsp</result>
+        </action>
+    </package>
+    
+    <package name="h02" extends="struts-default">               
+        <action  name="insertOd">
+            <result>/h02/insertOrder.jsp</result>
+        </action>
+        <action name="insertIt">
+            <result>/h02/insertItem.jsp</result>
+        </action>
+        <action name="retrieveIt">
+            <result>/h02/retrieveItem.jsp</result>
+        </action>
+	      
+        <action name="retrieveOd">
+            <result>/h02/retrieveOrder.jsp</result>
+        </action>
+        <action name="InsertOrder" class="h02.action.OrderAction" method="insert">
+            <result>/h02/insert_success.jsp</result>
+        </action>
+	      
+        <action name="InsertItem" class="h02.action.ItemAction" method="insertIt">
+            <result>/h02/insertItem_Success.jsp</result>
+            <result name="error">/views/insertOrder.jsp</result>
+        </action>
+	      
+        <action name="RetrieveItem" class="h02.action.ItemAction" method="retrieveIt">
+            <result name="success">/h02/retrieve_success.jsp</result>
+            <result name="error">/h02/retrieveItem.jsp</result>
+        </action>
+	      
+        <action name="RetrieveOrder" class="h02.action.OrderAction" method="retrieve">
+            <result>/h02/retrieveOrder_success.jsp</result>
+            <result name="error">/h02/retrieveOrder.jsp</result>
+        </action>
+    </package>
+    
+    <package name="h03" extends="struts-default">               
+        <action  name="h03_insert">
+            <result>/h03/insertUser.jsp</result>
+        </action>        
+	      
+        <action name="h03_retrieve">
+            <result>/h03/retrieveUser.jsp</result>
+        </action>          
+	      
+        <action name="h03_insertUser" class="h03.action.UserAction" method="insertUser">
+            <result>/h03/insert_success.jsp</result>
+        </action>
+        <action name="h03_retrieveUser" class="h03.action.UserAction" method="retrieveUser">
+            <result>/h03/retrieveUser_success.jsp</result>
+        </action>
+    </package>
+    
+    <package name="h04" extends="struts-default">               
+        <action  name="insertPsn">
+            <result>/h04/insertPerson.jsp</result>
+        </action>
+        <action name="retrievePsn">
+            <result>/h04/retrievePerson.jsp</result>
+        </action>           
+        <action name="insertPerson" class="h04.action.PersonAction" method="savePerson">
+            <result>/h04/insert_success.jsp</result>
+        </action>
+	      
+        <action name="retrievePerson" class="h04.action.PersonAction" method="retrievePerson">
+            <result name="success">/h04/retrieve_success.jsp</result>
+	      	   
+        </action>
+    </package>
+    
+    <package name="h05" extends="struts-default">               
+        <action  name="h05_insert">
+            <result>/h05/insertUser.jsp</result>
+        </action>        
+	      
+        <action name="h05_retrieve">
+            <result>/h05/retrieveUser.jsp</result>
+        </action>          
+	      
+        <action name="h05_insertUser" class="h05.action.UserAction" method="insertUser">
+            <result>/h05/insert_success.jsp</result>
+        </action>
+        <action name="h05_retrieveUser" class="h05.action.UserAction" method="retrieveUser">
+            <result>/h05/retrieveUser_success.jsp</result>
+        </action>
+    </package>
+    
+    <package name="h06" extends="struts-default">               
+        <action  name="inserta">
+            <result>/h06/insertAnimal.jsp</result>
+        </action>
+         
+        <action  name="insertla">
+            <result>/h06/insertLandAnimal.jsp</result>
+        </action>
+        <action  name="insertaa">
+            <result>/h06/insertAirAnimal.jsp</result>
+        </action>
+        <action  name="retrievea">
+            <result>/h06/retrieveAnimal.jsp</result>
+        </action>
+         
+        <action  name="retrievela">
+            <result>/h06/retrieveLandAnimal.jsp</result>
+        </action>
+        <action  name="retrieveaa">
+            <result>/h06/retrieveAirAnimal.jsp</result>
+        </action>
+                 
+        <action name="insertAnimal" class="h06.action.AnimalAction" method="saveAnimal">
+            <result>/h06/insert_success.jsp</result>
+        </action>
+	      
+        <action name="insertLandAnimal" class="h06.action.AnimalAction" method="saveLandAnimal">
+            <result>/h06/insert_success.jsp</result>
+        </action>
+	      
+        <action name="insertAirAnimal" class="h06.action.AnimalAction" method="saveAirAnimal">
+            <result>/h06/insert_success.jsp</result>	      	   
+        </action>
+	      
+        <action name="retrieveAnimal" class="h06.action.AnimalAction" method="retrieveAnimal">
+            <result>/h06/retrieveAnimal_success.jsp</result>	      	   
+        </action>
+	      
+        <action name="retrieveAirAnimal" class="h06.action.AnimalAction" method="retrieveAirAnimal">
+            <result>/h06/retrieveAirAnimal_success.jsp</result>	      	   
+        </action>
+	      
+        <action name="retrieveLandAnimal" class="h06.action.AnimalAction" method="retrieveLandAnimal">
+            <result>/h06/retrieveLandAnimal_success.jsp</result>	      	   
+        </action>
+    </package>
+    
+    <package name="h07" extends="struts-default">               
+        <action  name="h07_insert">
+            <result>/h07/insertPerson.jsp</result>
+        </action>        
+	      
+        <action name="h07_retrieve">
+            <result>/h07/retrievePerson.jsp</result>
+        </action>   
+        <action name="h07_insertPerson" class="h07.action.PersonAction" method="savePerson">
+            <result>/h07/insert_success.jsp</result>
+        </action>
+	      
+        <action name="h07_retrievePerson" class="h07.action.PersonAction" method="retrievePerson">
+            <result>/h07/retrieve_success.jsp</result>
+        </action>
+    </package>
+    
+    <package name="h08" extends="struts-default">               
+        <action  name="h08_phone">
+            <result>/h08/phone_index.jsp</result>
+        </action>
+        <action  name="h08_customer">
+            <result>/h08/customer_index.jsp</result>
+        </action>
+        <action  name="h08_insert">
+            <result>/h08/insert.jsp</result>
+        </action>
+        <action  name="h08_insertp">
+            <result>/h08/phone_insert.jsp</result>
+        </action>
+        <action name="h08_retrieve">
+            <result>/h08/retrieve.jsp</result>
+        </action>
+        <action name="h08_retrievep">
+            <result>/h08/retrievephone.jsp</result>
+        </action>
+	      	       	      
+        <action name="h08_InsertCustomer" class="h08.action.CustomerAction" method="insert">
+            <result>/h08/insert_success.jsp</result>
+        </action>
+	      
+        <action name="h08_RetrieveCustomer" class="h08.action.CustomerAction" method="retrieve">
+            <result>/h08/retrieve_success.jsp</result>
+            <result name="error">/views/error.jsp</result>
+        </action>
+	      	      
+        <action name="h08_InsertPhone" class="h08.action.CustomerAction" method="insertPhone">
+            <result>/h08/insertphone_success.jsp</result>
+        </action>
+        <action name="h08_RetrievePhone" class="h08.action.CustomerAction" method="retrievePhone">
+            <result>/h08/retrievephone_success.jsp</result>
+            <result name="error">/h08/error.jsp</result>
+        </action>
+    </package>
+    
+    <package name="h09" extends="struts-default">               
+        <action  name="h09_insertOd">
+            <result>/h09/insertOrder.jsp</result>
+        </action>
+        <action name="h09_insertIt">
+            <result>/h09/insertItem.jsp</result>
+        </action>
+        <action name="h09_retrieveIt">
+            <result>/h09/retrieveItem.jsp</result>
+        </action>
+	      
+        <action name="h09_retrieveOd">
+            <result>/h09/retrieveOrder.jsp</result>
+        </action>
+        <action name="h09_InsertOrder" class="h09.action.OrderAction" method="insert">
+            <result>/h09/insert_success.jsp</result>
+        </action>
+	      
+        <action name="h09_InsertItem" class="h09.action.ItemAction" method="insertIt">
+            <result>/h09/insertItem_Success.jsp</result>
+        </action>
+	      
+        <action name="h09_RetrieveItem" class="h09.action.ItemAction" method="retrieveIt">
+            <result name="success">/h09/retrieve_success.jsp</result>
+	      	   
+        </action>
+	      
+        <action name="h09_RetrieveOrder" class="h09.action.OrderAction" method="retrieve">
+            <result>/h09/retrieveOrder_success.jsp</result>
+        </action>
+    </package>
+    
+    <package name="h10" extends="struts-default">               
+        <action  name="h10_inserta">
+            <result>/h10/insertauthor.jsp</result>
+        </action>
+        <action name="h10_insertb">
+            <result>/h10/searchdata.jsp</result>
+        </action>
+        <action name="h10_deletetb">
+            <result>/h10/delete.jsp</result>
+        </action>
+        <action name="h10_authorinsert" method="authorinsert" class="h10.action.BigrophyAction">
+            <result>/h10/successauthor.jsp</result>
+        </action>
+        <action name="h10_searchdata" method="searchdata" class="h10.action.BigrophyAction">
+            <result>/h10/successsearch.jsp</result>
+        </action>
+        <action name="h10_deletedata" method="deleteIt" class="h10.action.BigrophyAction">
+            <result>/h10/successdelete.jsp</result>
+        </action>
+    </package>
+        
+    <package name="h11" extends="struts-default">               
+        <action  name="h11_inperson">
+            <result>/h11/insertperson.jsp</result>
+        </action>
+        <action name="h11_inmother">
+            <result>/h11/insertmother.jsp</result>
+        </action>
+        <action name="h11_reperson">
+            <result>/h11/retrieveperson.jsp</result>
+        </action>
+	      
+        <action name="h11_remother">
+            <result>/h11/retrievemother.jsp</result>
+        </action>
+        <action name="h11_insertperson" method="insertperson" class="h11.action.PersonAction">
+            <result name="success">/h11/insertsuccessperson.jsp</result>
+        </action>
+	   
+        <action name="h11_insertmother" method="insertmother" class="h11.action.MotherAction">
+            <result name="success">/h11/insertsuccessmother.jsp</result>
+        </action>
+	  
+        <action name="h11_retrieveperson" method="retrieveperson" class="h11.action.PersonAction">
+            <result name="success">/h11/retrievesuccessperson.jsp</result>
+        </action>
+	  
+        <action name="h11_retreivemother" method="retrievemother" class="h11.action.MotherAction">
+            <result name="success">/h11/retrievesuccessmother.jsp</result>
+        </action>
+    </package>
+</struts>

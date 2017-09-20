@@ -1,0 +1,34 @@
+    <package name="example" extends="struts-default">
+
+        <action name="save">
+            <result>/h01/customer.jsp</result>      	    
+        </action>
+       
+        <action name="search">
+            <result>/h01/search.jsp</result>      	    
+        </action>
+       
+        <action name="insert" class="h01.action.OneEntity2TableAction" method="execute">
+            <result name="success">h01/insert_success.jsp</result>
+            <result name="error">h01/customer.jsp</result>
+        </action>
+	     
+        <action name="find" class="h01.action.OneEntity2TableAction" method="search">
+            <result name="success">/h01/show.jsp</result>	     	
+        </action>
+        <!--  Product   -->
+        
+        <action name="aaa">
+            <result name="success">/h01/product_add_form.jsp</result>
+        </action>
+        
+        <action name="bbb" class="h01.action.ProductAction" method="viewAll">
+            <result>/h01/show_all_products.jsp</result>
+        </action>
+        
+        <action name="add" class="h01.action.ProductAction" method="execute">
+            <result name="success">/h01/product_show.jsp</result>
+            <result name="input">/h01/product_add_form.jsp</result>
+        </action>
+    </package>
+

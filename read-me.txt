@@ -1,0 +1,18 @@
+Libraries
+______
+Struts2 + Hibernate 4.3.1 + Mysql db connector
+
+
+Project information
+_______________
+h01  - Hibernate_1Entity2Tables
+h02  - Hibernate_Bidirectional
+h03  - Hibernate_CollectionMapping
+h04  - Hibernate_ComponentMapping
+h05  - Hibernate_EntityCollectionMapping
+h06  - Hibernate_EntityInheritance
+h07  - Hibernate_EntityObjectCollectionMapping --- > error for same entity (customer / person)
+h08  - Hibernate_ManyToMany_Bidirectional
+h09  - Hibernate_Unidirectional
+h10  - HibernateOnetoOne_Bi
+h11  - HibernateOnetoOne_Unidirectional
